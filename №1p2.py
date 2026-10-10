@@ -1,5 +1,23 @@
 # Задание шифр Цезаря
 def tozezhar(sent: str, shag: int):
+    """
+    Зашифровывает сообщение по шифру Цезаря с указаным шагом.
+
+    Args:
+        sent (str): Исходный текст
+        shag (int): Шаг для зашифровки текста с помощью шифра Цезаря
+
+    Returns:
+        str: Итоговый зашифрованный текст
+
+    Raises:
+        ValueError: Если введен текст на каком-то языке кроме русского
+                    и английского.
+
+    Example:
+        >> tozezhar(ABCD, 1)
+        BCDE
+    """
     ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     RUS = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
     leng = ''
@@ -21,6 +39,24 @@ def tozezhar(sent: str, shag: int):
             newsent += korkas[(korkas.find(sent[i]) + (shag)) - (len(korkas))]
     return newsent
 def outzezhar(sent: str, shag: int):
+    """
+    Расшифровывает сообщение по шифру Цезаря с указаным шагом.
+
+    Args:
+        sent (str): Исходный текст
+        shag (int): Шаг для расшифровки текста с помощью шифра Цезаря
+
+    Returns:
+        str: Итоговый расшифрованный текст
+
+    Raises:
+        ValueError: Если введен текст на каком-то языке кроме русского
+                    и английского.
+
+    Example:
+        >> outzezhar(BCDE, 1)
+        ABCD
+    """
     ABC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     RUS = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
     leng = ''
